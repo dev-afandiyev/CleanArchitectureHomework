@@ -30,8 +30,8 @@ class UserCreateFragment : BottomSheetDialogFragment() {
         (dialog as BottomSheetDialog).behavior.state = BottomSheetBehavior.STATE_EXPANDED
         val view = inflater.inflate(R.layout.fragment_user_create, container, false)
 
-        etName = view.findViewById(R.id.et_name)
-        etSurname = view.findViewById(R.id.et_surname)
+        etName = view.findViewById(R.id.et_user_name)
+        etSurname = view.findViewById(R.id.et_user_surname)
         button = view.findViewById(R.id.bt_add_user)
 
         usersViewModel = ViewModelProviders.of(this).get(UserCreateViewModel::class.java)

@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cv">
+        android:id="@+id/user_info_cv">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -15,28 +15,28 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/user_name_rv_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/name"
-                android:text="name"
                 android:layout_alignParentTop="true"
-                android:textSize="30sp"/>
+                android:text="name"
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/surname"
+                android:id="@+id/user_surname_rv_item"
                 android:text="surname"
                 android:layout_marginLeft="90dp"
                 android:layout_alignParentTop="true"
                 android:textSize="30sp"/>
 
             <TextView
+                android:id="@+id/user_date_creation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="date"
-                android:id="@+id/date"
-                android:layout_below="@+id/name"/>
+                android:layout_below="@+id/user_name_rv_item"
+                android:text="date" />
 
         </RelativeLayout>
 

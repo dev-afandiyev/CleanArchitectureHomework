@@ -34,8 +34,8 @@ class MainFragment : Fragment() {
         recyclerView.adapter = adapter
 
         usersViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        usersViewModel.getAllUsers().observe(this) {
-                adapter.setList(it)
+        usersViewModel.getAllUsers()?.observe(this) {
+            adapter.setList(it)
         }
 
         button = view.findViewById(R.id.bt_open_book_dialog)
