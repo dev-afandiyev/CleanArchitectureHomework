@@ -1,13 +1,15 @@
 package com.example.cleanarchitecturehomework.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.cleanarchitecturehomework.App
 import com.example.cleanarchitecturehomework.model.UserModel
+import com.example.cleanarchitecturehomework.model.UsersRepository
 
-class UserCreateViewModel(private val application: App) : AndroidViewModel(application) {
+class UserCreateViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val usersRepository = application.usersRepository
+    private val usersRepository = UsersRepository(application)
     val insertUsersState: MutableLiveData<UserModel> = MutableLiveData<UserModel>()
 
     fun insert(name: String, surname: String) {
