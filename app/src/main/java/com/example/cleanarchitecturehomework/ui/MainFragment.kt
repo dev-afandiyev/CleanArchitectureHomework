@@ -6,18 +6,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cleanarchitecturehomework.R
 import com.example.cleanarchitecturehomework.databinding.FragmentMainBinding
 import com.example.cleanarchitecturehomework.viewmodel.MainViewModel
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
 
     private lateinit var userCreateFragment: UserCreateFragment
     private lateinit var adapter: UsersAdapter
-    private lateinit var usersViewModel: MainViewModel
+    private val usersViewModel: MainViewModel by viewModels()
 
     @SuppressLint("FragmentLiveDataObserve")
     override fun onCreateView(
@@ -34,7 +36,6 @@ class MainFragment : Fragment() {
         binding.rvUsers.layoutManager = LinearLayoutManager(context)
         binding.rvUsers.adapter = adapter
 
-        usersViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         usersViewModel.getAllUsers()?.observe(this) {
             adapter.setList(it)
         }

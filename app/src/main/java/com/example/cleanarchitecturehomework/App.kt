@@ -1,16 +1,8 @@
 package com.example.cleanarchitecturehomework
 
 import android.app.Application
-import android.content.Context
-import com.example.cleanarchitecturehomework.model.UsersRepository
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class App : Application() {
-
-    var usersRepository: UsersRepository? = null
-
-    override fun onCreate() {
-        super.onCreate()
-//        usersRepository = UsersRepository.getInstance(this)
-    }
-
 }
